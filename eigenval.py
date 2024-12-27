@@ -40,7 +40,7 @@ class Eigenval:
                     self.band_occ[kpoint, band, :] = band_info[1+self.spin: 1+2*self.spin]
         return None
     
-    def get_lumo(self, kpt, spin):
+    def get_lowest_unoccupied(self, kpt, spin):
         """
         得到给定k点，给定自旋的最低未占据态的轨道编号（从0开始）以及能量
         """
@@ -50,7 +50,7 @@ class Eigenval:
 
         return band_index, self.band_energy[kpt, band_index, spin]
     
-    def get_homo(self, kpt, spin):
+    def get_highest_occupied(self, kpt, spin):
         """
         得到给定k点，给定自旋的最高完全占据态的轨道编号（从0开始）以及能量
         """
